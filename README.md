@@ -9,4 +9,4 @@ Our question becomes: <br />
 In order to answer this, we must first solve a smaller problem: <br /> 
 *How can we accurately simulate a ranked preference election?* <br /> <br /> 
 The script aims to accomplish just that, based on both mathematical/political literature & data collected from real elections. 
-## :diamond_shape_with_a_dot_inside: Early (fruitless) simulation methods
+## :diamond_shape_with_a_dot_inside: Early (imprecise) simulation methods
