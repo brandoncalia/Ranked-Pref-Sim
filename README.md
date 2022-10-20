@@ -20,6 +20,8 @@ The following ranked choice counting methods were implemented and tested in the 
 In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like: <br /> <br />
 ####  Running `historical-elections.py:`
 To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. Note that the code can handle blank ballots and duplicate candidates, but does not take in file formats that include curly braces {}. <br /> <br />
+
+## Simulation Parameters
 It is apparent that a real election has the following characteristics that must be seen in our simulation method: 
 * Incomplete ballots 
 * Single-candidate ballots 
@@ -27,4 +29,13 @@ It is apparent that a real election has the following characteristics that must 
     * Voters preferring a candidate *A* as their first choice are likely to rank similar candidate *B* next
 * A relatively close race between 2-3 favorites
 * High frequency of Condorcet existence
+
+## The Spatial Model of Elections
+
+## Running `ranked-pref-sim.py`
+
+## Data & Results
+
+## Conclusions
+
 
