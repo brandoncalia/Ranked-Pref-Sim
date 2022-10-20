@@ -9,4 +9,10 @@ Our question becomes: <br />
 In order to answer this, we must first solve a smaller problem: <br /> 
 *How can we accurately simulate a ranked preference election?* <br /> <br /> 
 The script aims to accomplish just that, based on both mathematical/political literature & data collected from real elections. 
-## :diamond_shape_with_a_dot_inside: Early (imprecise) simulation methods
+## :diamond_shape_with_a_dot_inside: Counting methods
+The following ranked choice counting methods were implemented and tested in the code: 
+* [Plurality](https://en.wikipedia.org/wiki/Plurality_voting#:~:text=In%20single%2Dwinner%20plurality%20voting,the%20largest%20number%20of%20votes.)
+* [Borda](https://en.wikipedia.org/wiki/Borda_count#:~:text=The%20Borda%20count%20is%20a%20ranked%20voting%20system%3A%20the%20voter,most%20preferred%2C%20and%20so%20on.)
+* [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method#:~:text=A%20Condorcet%20method%20(English%3A%20%2F,there%20is%20such%20a%20candidate.))
+* [Instant runoff](https://en.wikipedia.org/wiki/Instant-runoff_voting)
+* [Baldwin](https://en.wikipedia.org/wiki/Nanson%27s_method#Baldwin_method)
