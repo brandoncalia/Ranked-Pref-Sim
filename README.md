@@ -9,10 +9,14 @@ Our question becomes: <br />
 In order to answer this, we must first solve a smaller problem: <br /> 
 *How can we accurately simulate a ranked preference election?* <br /> <br /> 
 The script aims to accomplish just that, based on both mathematical/political literature & data collected from real elections. 
-## :diamond_shape_with_a_dot_inside: Counting methods
+## :diamond_shape_with_a_dot_inside: Counting Methods
 The following ranked choice counting methods were implemented and tested in the code: 
 * [Plurality](https://en.wikipedia.org/wiki/Plurality_voting)
 * [Borda](https://en.wikipedia.org/wiki/Borda_count)
 * [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method)
 * [Instant runoff](https://en.wikipedia.org/wiki/Instant-runoff_voting)
 * [Baldwin](https://en.wikipedia.org/wiki/Nanson%27s_method#Baldwin_method)
+## :black_nib: Data Collection & Analysis of Real Elections
+In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like: <br /> <br />
+To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. Note that the code can handle blank ballots and duplicate candidates, but does not take in file formats that include curly braces {}. <br /> <br />
+
