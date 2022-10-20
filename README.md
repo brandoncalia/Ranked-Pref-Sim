@@ -1,6 +1,7 @@
 # Ranked-Pref-Sim 
 A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections <br /><br />
-For information on just running the scripts, see
+Read below for details on the project, theory, and methodology<br /><br />
+For information exclusively on running the scripts, see [here](#Background)
 ## :bulb: Background
 In a ranked preference election, voters are given a set of candidates over which they may rank in preferential order. <br /> <br /> 
 There are multiple different counting methods that can be used to determine the winner. Despite all methods appearing perfectly fair, they may disagree and pick different winners. <br /> <br /> 
