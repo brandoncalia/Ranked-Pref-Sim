@@ -22,7 +22,7 @@ In order to simulate a realistic election, we must first understand what a real 
 To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. Note that the code can handle blank ballots and duplicate candidates, but does not take in file formats that include curly braces {}. <br /> <br />
 
 ## :crystal_ball: Simulation Parameters
-It is apparent that a real election has the following characteristics that must be seen in our simulation method: 
+We observe that a real election has the following characteristics that must be seen in our simulation method: 
 * Incomplete ballots 
 * Single-candidate ballots 
 * Similar patterns of candidate ordering
@@ -31,6 +31,10 @@ It is apparent that a real election has the following characteristics that must 
 * High frequency of Condorcet existence
 
 ## :dart: The Spatial Model of Elections
+
+The literature in the field of elections and voter theory is widely in agreement that a spatial model is the most accurate way to model a voter's preferences for any number of candidates. In the spatial model candidates are placed in multi-dimensional space, where each dimension is an issue, policy, or potential attribute of a candidate. Each voter has a point in this multi-dimensional space that best represents their opinions across multiple issues. A utility function can be used to model a voter's favor towards each candidate. A natural utility function is the Euclidean distance. However, this fails to account for a common theory that a voter might prefer the most extreme candidate on their side of an issue (scalar product), but only up to an extent. A mixed model, included both Euclidean distance, the scalar product, and an additional random variable is believed to be a sophisticated and accurate way to model a voter's utility for a candidate in space. The accuracy of such mixed models has been [experimentally verified]
+
+
 
 ## :chart_with_upwards_trend: Data & Results
 #### Running `ranked-pref-sim.py`:
