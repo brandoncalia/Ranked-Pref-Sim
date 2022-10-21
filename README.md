@@ -23,13 +23,16 @@ In order to simulate a realistic election, we must first understand what a real 
 To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. Note that the code can handle blank ballots and duplicate candidates, but does not take in file formats that include curly braces {}. <br /> <br />
 
 ## :crystal_ball: Simulation Parameters
-We observe that a real election has the following characteristics that must be seen in our simulation method: 
+We observe that, as opposed to randomly generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
 * Incomplete ballots 
 * Single-candidate ballots 
 * Similar patterns of candidate ordering
     * Voters preferring a candidate *A* as their first choice are likely to rank similar candidate *B* next
-* A relatively close race between 2-3 favorites
-* High frequency of Condorcet existence
+* A relatively close race between 2-3 favorites with other candidates lagging behind more
+* Potentially high frequency of Condorcet existence
+   * Every election we ran had a Condorcet winner
+
+We observe a range of about 15-40% of all ballots containing only a single candidate, and only about 5-10% containing all candidates. On average, voters tend to rank about 68% of the total available alternatives. These numbers should be reflected in our simulation.
 
 ## :dart: The Spatial Model of Elections
 
