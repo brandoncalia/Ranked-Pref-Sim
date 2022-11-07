@@ -55,10 +55,14 @@ $(0 < \beta < 1)$
 
 With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations.
 
+In space, we choose to distribute both voters and candidates the same - each x and y coordinate is drawn from a normal distribution, $\mu = 0, \sigma = .34$. Additional politcal science knowledge on the distribution of voter beliefs would be useful to improve this choice. 
+
 
 
 ## :chart_with_upwards_trend: Data & Results
-The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. Below is the recorded data on the frequences of agreement of our tested counting methods: 
+The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. 
+
+Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
 
 Here is a sample scatterplot of one simulated election:
@@ -68,8 +72,8 @@ Spatial positioning of Plurality vs. Condorcet winners when the methods disagree
 
 
 #### Running `ranked-pref-sim.py`:
-
+The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. 
 
 ## :8ball: Conclusions
-
+There are a few things to notice from all the data 
 
