@@ -20,7 +20,9 @@ The following ranked choice counting methods were implemented and tested in the 
 ## :black_nib: Data Collection & Analysis of Real Elections
 In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like: <br /> <br />
 ####  Running `historical-elections.py`:
-To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. Note that the code can handle blank ballots and duplicate candidates, but does not take in file formats that include curly braces {}. <br /> <br />
+To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. At large results are housed in the created 'DATA.TXT' file.
+
+**Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots. These entries were simply discarded. 
 
 ## :crystal_ball: Simulation Parameters
 We observe that, as opposed to randomly generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
@@ -39,7 +41,14 @@ We observe a range of about 15-40% of all ballots containing only a single candi
 The literature in the field of elections and voter theory is widely in agreement that a spatial model is the most accurate way to model a voter's preferences for any number of candidates. In the spatial model, candidates are placed in multi-dimensional space, where each dimension is an issue, policy, or potential attribute of a candidate. Each voter has a point in this multi-dimensional space that best represents their opinions across multiple issues. A utility function can be used to model a voter's favor towards each candidate. A natural utility function is the Euclidean distance. However, a common theory is that a voter might prefer the most extreme candidate on their side of an issue (but only up to an extent). Euclidean distance does not account for this preference, but a scalar product of voter and candidate position would. A mixed utility model, including both Euclidean distance and the scalar product is believed to be ideal. We also include a random variable in our function to account for small, miscalleanous favors and voter beliefs. 
 
 Therefore, our utility function becomes: 
+
 $U(V,C)=\alpha |V-C| + \beta V\cdot C + R(V,C)$
+
+$(0 < \alpha < 1)$
+
+$(0 < \beta < 1)$
+
+With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations.
 
 
 
