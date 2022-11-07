@@ -18,7 +18,12 @@ The following ranked choice counting methods were implemented and tested in the 
 * [Instant runoff](https://en.wikipedia.org/wiki/Instant-runoff_voting)
 * [Baldwin](https://en.wikipedia.org/wiki/Nanson%27s_method#Baldwin_method)
 ## :black_nib: Data Collection & Analysis of Real Elections
-In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like: <br /> <br />
+In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like (sample): <br /> <br />
+
+![preflib](https://user-images.githubusercontent.com/41372799/200403009-c54868f9-6d27-497c-aed9-b9b35e3f06c6.JPG)
+
+
+
 ####  Running `historical-elections.py`:
 To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. At large results are housed in the created 'DATA.TXT' file.
 
@@ -53,6 +58,10 @@ With $\alpha$ and $\beta$ being scaling variables to account for the weight give
 
 
 ## :chart_with_upwards_trend: Data & Results
+The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. Below is the recorded data on the frequences of agreement of our tested counting methods: 
+
+
+
 #### Running `ranked-pref-sim.py`:
 
 
