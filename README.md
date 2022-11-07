@@ -1,4 +1,4 @@
-# Ranked-Pref-Sim
+# Ranked-Pref-Sim :bar_chart:
 A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections <br /><br />
 Read below for details on the project, theory, and methodology. For information exclusively on running the scripts, download the project as zip and see `historical-elections.py` and `ranked-pref-sim.py` in sections below
 ## :bulb: Background
