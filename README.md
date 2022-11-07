@@ -1,5 +1,8 @@
 # Ranked-Pref-Sim :bar_chart:
-A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections <br /><br />
+A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections 
+
+<img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG"> <img width="459" alt="condorcet-plurality" src="https://user-images.githubusercontent.com/41372799/200413702-74f710ae-29b1-4ca9-ae4b-a4e0a85a6ba1.PNG">
+
 Read below for details on the project, theory, and methodology. For information exclusively on running the scripts, download the project as zip and see `historical-elections.py` and `ranked-pref-sim.py` in sections below
 ## :bulb: Background
 In a ranked preference election, voters are given a set of candidates over which they may rank in preferential order. <br /> <br /> 
@@ -68,6 +71,9 @@ The simulation script utilizes the spatial model of elections and parameters tha
 *The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers.*
 
 Here is a sample scatterplot of one simulated election:
+
+<img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG">
+
 
 Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
