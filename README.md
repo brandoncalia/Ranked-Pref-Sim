@@ -61,6 +61,11 @@ With $\alpha$ and $\beta$ being scaling variables to account for the weight give
 The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
 
+Here is a sample scatterplot of one simulated election:
+
+Spatial positioning of Plurality vs. Condorcet winners when the methods disagree:
+
+
 
 #### Running `ranked-pref-sim.py`:
 
