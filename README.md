@@ -19,18 +19,20 @@ The following ranked choice counting methods were implemented and tested in the 
 * [Baldwin](https://en.wikipedia.org/wiki/Nanson%27s_method#Baldwin_method)
 ## :black_nib: Data Collection & Analysis of Real Elections
 In order to simulate a realistic election, we must first understand what a real election looks like. [Preflib](https://www.preflib.org/) hosts full sets of ballots from historical ranked preference elections, which the program will take in and collect data on. Raw files look like (sample): <br /> <br />
-
 ![preflib](https://user-images.githubusercontent.com/41372799/200403009-c54868f9-6d27-497c-aed9-b9b35e3f06c6.JPG)
 
 
 
 ####  Running `historical-elections.py`:
-To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. At large results are housed in the created 'DATA.TXT' file.
+*To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. At large results are housed in the created 'DATA.TXT' file.*
+
+We ran 127 elections and collected the following data: 
+
 
 **Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots. These entries were simply discarded. 
 
 ## :crystal_ball: Simulation Parameters
-We observe that, as opposed to randomly generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
+We observe that, as opposed to randomly (uniformly) generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
 * Incomplete ballots 
 * Single-candidate ballots 
 * Similar patterns of candidate ordering
@@ -63,7 +65,7 @@ In space, we choose to distribute both voters and candidates the same - each x a
 The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. 
 
 #### Running `ranked-pref-sim.py`:
-The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. 
+*The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers.*
 
 Here is a sample scatterplot of one simulated election:
 
