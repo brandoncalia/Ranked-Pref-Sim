@@ -36,7 +36,10 @@ We observe a range of about 15-40% of all ballots containing only a single candi
 
 ## :dart: The Spatial Model of Elections
 
-The literature in the field of elections and voter theory is widely in agreement that a spatial model is the most accurate way to model a voter's preferences for any number of candidates. In the spatial model candidates are placed in multi-dimensional space, where each dimension is an issue, policy, or potential attribute of a candidate. Each voter has a point in this multi-dimensional space that best represents their opinions across multiple issues. A utility function can be used to model a voter's favor towards each candidate. A natural utility function is the Euclidean distance. However, this fails to account for a common theory that a voter might prefer the most extreme candidate on their side of an issue (scalar product), but only up to an extent. A mixed model, included both Euclidean distance, the scalar product, and an additional random variable is believed to be a sophisticated and accurate way to model a voter's utility for a candidate in space. The accuracy of such mixed models has been [experimentally verified]
+The literature in the field of elections and voter theory is widely in agreement that a spatial model is the most accurate way to model a voter's preferences for any number of candidates. In the spatial model, candidates are placed in multi-dimensional space, where each dimension is an issue, policy, or potential attribute of a candidate. Each voter has a point in this multi-dimensional space that best represents their opinions across multiple issues. A utility function can be used to model a voter's favor towards each candidate. A natural utility function is the Euclidean distance. However, a common theory is that a voter might prefer the most extreme candidate on their side of an issue (but only up to an extent). Euclidean distance does not account for this preference, but a scalar product of voter and candidate position would. A mixed utility model, including both Euclidean distance and the scalar product is believed to be ideal. We also include a random variable in our function to account for small, miscalleanous favors and voter beliefs. 
+
+Therefore, our utility function becomes: 
+$U(V,C)=\alpha |V-C| + \beta V\cdot C + R(V,C)$
 
 
 
