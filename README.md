@@ -62,18 +62,24 @@ In space, we choose to distribute both voters and candidates the same - each x a
 ## :chart_with_upwards_trend: Data & Results
 The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. 
 
-Below is the recorded data on the frequences of agreement of our tested counting methods: 
-
+#### Running `ranked-pref-sim.py`:
+The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. 
 
 Here is a sample scatterplot of one simulated election:
+
+Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
 Spatial positioning of Plurality vs. Condorcet winners when the methods disagree:
 
 
 
-#### Running `ranked-pref-sim.py`:
-The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. 
+
 
 ## :8ball: Conclusions
-There are a few things to notice from all the data 
+Some of our most glaring observations include:
+* Close races are a strong predictor of method disagreements
+* Condorcet winners occur very, very frequently, in both real election and simulation
+* Baldwin agrees most frequently with Condorcet (but not always - with incomplete ballots, they can disagree)
+* Borda and Baldwin agree much more frequently than their counterparts, Instant Runoff and Plurality
 
+We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, capitalizes on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. 
