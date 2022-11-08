@@ -35,7 +35,7 @@ We ran 127 real elections and collected the following data:
 **Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots. These entries were simply discarded. 
 
 ## :crystal_ball: Simulation Parameters
-We observe that, as opposed to randomly (uniformly) generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
+With an understanding of what a real election looks like and data on their metrics, we can begin creating our own simulation method. As opposed to randomly (uniformly) generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
 * Incomplete ballots 
 * Single-candidate ballots 
 * Similar patterns of candidate ordering
@@ -43,8 +43,9 @@ We observe that, as opposed to randomly (uniformly) generated ballots, a real el
 * A relatively close race between 2-3 favorites with other candidates lagging behind more
 * Potentially high frequency of Condorcet existence
    * Every election we ran had a Condorcet winner
+   * We can't directly program this, but the parameters we use should in turn create results like this
 
-We observe a range of about 15-40% of all ballots containing only a single candidate, and only about 5-10% containing all candidates. On average, voters tend to rank about 68% of the total available alternatives. These numbers should be reflected in our simulation.
+We observe a range of about 15-40% of all ballots containing only a single candidate, and only about 5-10% containing all candidates. On average, voters tend to rank about 68% of the total available alternatives. These numbers should be reflected in the simulation.
 
 ## :dart: The Spatial Model of Elections
 
@@ -58,9 +59,11 @@ $(0 < \alpha < 1)$
 
 $(0 < \beta < 1)$
 
-With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations.
 
-In space, we choose to distribute both voters and candidates the same - each x and y coordinate is drawn from a normal distribution, $\mu = 0, \sigma = .34$. Additional politcal science knowledge on the distribution of voter beliefs would be useful to improve this choice. 
+With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations, and $R(V,C)$ denoting a random variable drawn from a normal distribution, $\mu=0, \sigma=.05$
+
+
+In two dimensional space, we choose to distribute both voters and candidates the same - each x and y coordinate is drawn from a normal distribution, $\mu = 0, \sigma = .34$. Additional politcal science knowledge on the distribution of voter beliefs would be useful to improve this choice. 
 
 
 
@@ -68,9 +71,9 @@ In space, we choose to distribute both voters and candidates the same - each x a
 The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. 
 
 #### Running `ranked-pref-sim.py`:
-*The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers.*
+*The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. More efficient ways of packing ballots are in the works.*
 
-Here is a sample scatterplot of one simulated election:
+Here is a sample scatterplot & results of one simulated election:
 
 <img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG">
 
@@ -84,10 +87,10 @@ Spatial positioning of Plurality vs. Condorcet winners when the methods disagree
 
 
 ## :8ball: Conclusions
-Some of our most glaring observations include:
+Some observations that immediately stick out:
 * Close races are a strong predictor of method disagreements
 * Condorcet winners occur very, very frequently, in both real election and simulation
-* Baldwin agrees most frequently with Condorcet (but not always - with incomplete ballots, they can disagree)
+* Baldwin agrees most frequently with Condorcet (but not always in agreement - with incomplete ballots, they can disagree)
 * Borda and Baldwin agree much more frequently than their counterparts, Instant Runoff and Plurality
 
-We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, capitalizes on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. 
+We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, could capitalize on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. We remain interested in attempting to "classify" the types (extreme, moderate, very similar to another candidate, etc.) of candidates who might win each respective method. 
