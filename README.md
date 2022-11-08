@@ -32,7 +32,7 @@ In order to simulate a realistic election, we must first understand what a real 
 We ran 127 real elections and collected the following data: 
 
 
-**Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots. These entries were simply discarded. 
+**Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots in multiple elections. These entries were simply discarded. 
 
 ## :crystal_ball: Simulation Parameters
 With an understanding of what a real election looks like and data on their metrics, we can begin creating our own simulation method. As opposed to randomly (uniformly) generated ballots, a real election has the following characteristics that must be seen in our simulation method: 
@@ -60,7 +60,7 @@ $(0 < \alpha < 1)$
 $(0 < \beta < 1)$
 
 
-With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations, and $R(V,C)$ denoting a random variable drawn from a normal distribution, $\mu=0, \sigma=.05$
+With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations, and $R(V,C)$ denoting a random variable drawn from a normal distribution, $\mu=0, \sigma=.05$.
 
 
 In two dimensional space, we choose to distribute both voters and candidates the same - each x and y coordinate is drawn from a normal distribution, $\mu = 0, \sigma = .34$. Additional politcal science knowledge on the distribution of voter beliefs would be useful to improve this choice. 
@@ -93,4 +93,4 @@ Some observations that immediately stick out:
 * Baldwin agrees most frequently with Condorcet (but not always in agreement - with incomplete ballots, they can disagree)
 * Borda and Baldwin agree much more frequently than their counterparts, Instant Runoff and Plurality
 
-We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, could capitalize on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. We remain interested in attempting to "classify" the types (extreme, moderate, very similar to another candidate, etc.) of candidates who might win each respective method. 
+We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, could capitalize on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. We remain interested in attempting to "classify" the types (extreme, moderate, very similar to another candidate, etc.) of candidates who might win each respective method, therefore determining specific metrics which might help choose a better winner when methods do disagree. 
