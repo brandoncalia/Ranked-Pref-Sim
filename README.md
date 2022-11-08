@@ -1,7 +1,7 @@
 # Ranked-Pref-Sim :bar_chart:
 A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections 
 
-<img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG"> <img width="459" alt="condorcet-plurality" src="https://user-images.githubusercontent.com/41372799/200413702-74f710ae-29b1-4ca9-ae4b-a4e0a85a6ba1.PNG">
+<img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG"> 
 
 Read below for details on the project, theory, and methodology. For information exclusively on running the scripts, download the project as zip and see `historical-elections.py` and `ranked-pref-sim.py` in sections below
 ## :bulb: Background
