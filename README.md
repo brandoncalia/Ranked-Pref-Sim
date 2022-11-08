@@ -29,7 +29,7 @@ In order to simulate a realistic election, we must first understand what a real 
 ####  Running `historical-elections.py`:
 *To check the results of these elections using alternate counting methods, simply place all the Preflib files to check into the "Files" folder and run historical-elections.py. Results & election metrics will be individually printed in the "Results" folder as seen below. Files containing elections with method discrepencies are marked with a '!'. At large results are housed in the created 'DATA.TXT' file.*
 
-We ran 127 elections and collected the following data: 
+We ran 127 real elections and collected the following data: 
 
 
 **Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots. These entries were simply discarded. 
