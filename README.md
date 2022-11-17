@@ -32,6 +32,8 @@ In order to simulate a realistic election, we must first understand what a real 
 
 We ran 127 real elections and collected the following data: 
 
+However, filtering by only larger political elections (> 2500 voters) yields the following:
+
 
 **Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots in multiple elections. These entries were simply discarded. 
 
@@ -46,7 +48,7 @@ With an understanding of what a real election looks like and data on their metri
    * Every election we ran had a Condorcet winner
    * We can't directly program this, but the parameters we use should in turn create results like this
 
-We observe a range of about 15-40% of all ballots containing only a single candidate, and only about 5-10% containing all candidates. On average, voters tend to rank about 68% of the total available alternatives. These numbers should be reflected in the simulation.
+We observe a range of about 15-30% of all ballots containing only a single candidate, and a range of anywhere from 0-60% containing all candidates. On average, voters tend to rank about 60% of the total available alternatives. Most political elections tend to include 4-8 candidates.
 
 ## :dart: The Spatial Model of Elections
 
@@ -61,7 +63,7 @@ $(0 < \alpha < 1)$
 $(0 < \beta < 1)$
 
 
-With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations, and $R(V,C)$ denoting a random variable drawn from a normal distribution, $\mu=0, \sigma=.05$.
+With $\alpha$ and $\beta$ being scaling variables to account for the weight given to Euclidean distance / scalar product calculations, and $R(V,C)$ denoting a random variable drawn from a normal distribution, $\mu=0, \sigma=.025$.
 
 
 In two dimensional space, we choose to distribute both voters and candidates the same - each x and y coordinate is drawn from a normal distribution, $\mu = 0, \sigma = .34$. Additional politcal science knowledge on the distribution of voter beliefs would be useful to improve this choice. 
@@ -69,7 +71,7 @@ In two dimensional space, we choose to distribute both voters and candidates the
 
 
 ## :chart_with_upwards_trend: Data & Results
-The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 500 and 25,000. 
+The simulation script utilizes the spatial model of elections and parameters that reflect the data gathered on real elections. We test 5,000 simulated elections, each with a random number of candidates between 4 and 9 and a random number of voters between 2500 and 50,000. 
 
 #### Running `ranked-pref-sim.py`:
 *The script runs itself. Just run it in any python editor to simulate and see results for yourself. Note that simulations can be timely, particularly with large voter numbers. More efficient ways of packing ballots are in the works.*
@@ -81,7 +83,7 @@ Here is a sample scatterplot & results of one simulated election:
 
 Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
-Spatial positioning of Plurality vs. Condorcet winners when the methods disagree:
+Spatial positioning of Plurality vs. Condorcet winners when the methods disagree (more on this in the next section):
 
 
 
