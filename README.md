@@ -47,11 +47,12 @@ With an understanding of what a real election looks like and data on their metri
    * Every election we ran had a Condorcet winner
    * We can't directly program this, but the parameters we use should in turn create results like this
 
-We observe a range of about 15-30% of all ballots containing only a single candidate, and a range of anywhere from 0-60% containing all candidates. On average, voters tend to rank about 60% of the total available alternatives. Most political elections tend to include 3-7 candidates.
+We observe a range of about 15-30% of all ballots containing only a single candidate, and a range of anywhere from 0-60% containing all candidates. On average, voters tend to rank about 60% of the total available alternatives. Most political elections tend to include 3-7 candidates. 
 
 We also hypothesize that a voter is less likely to rank all the available candidates as the number of available alternatives increase. Below is the data collected to test this theory: 
 
 
+Our probability that a voter ranks all the available candidates will therefore become a decreasing linear function of candidate number plus a random normal variable. 
 
 ## :dart: The Spatial Model of Elections
 
