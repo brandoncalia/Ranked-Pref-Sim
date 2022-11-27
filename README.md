@@ -34,7 +34,6 @@ We ran 127 real elections and collected the following data:
 
 However, filtering by only larger political elections (> 2500 voters) yields the following:
 
-
 **Note**: on Preflib, some ballot files contain ties marked with curly braces. For example, {3,5} would denote a tie between candidates 3 and 5. This is an issue, since the counting methods require a strict ordering. We choose to discard tied candidates, considering them "illegible" ballots. Some ballots contain large sets of entries for {1,2}, which is clearly *not* a candidate tie since it appears everywhere on multiple ballots in multiple elections. These entries were simply discarded. 
 
 ## :crystal_ball: Simulation Parameters
@@ -48,7 +47,11 @@ With an understanding of what a real election looks like and data on their metri
    * Every election we ran had a Condorcet winner
    * We can't directly program this, but the parameters we use should in turn create results like this
 
-We observe a range of about 15-30% of all ballots containing only a single candidate, and a range of anywhere from 0-60% containing all candidates. On average, voters tend to rank about 60% of the total available alternatives. Most political elections tend to include 4-8 candidates.
+We observe a range of about 15-30% of all ballots containing only a single candidate, and a range of anywhere from 0-60% containing all candidates. On average, voters tend to rank about 60% of the total available alternatives. Most political elections tend to include 3-7 candidates.
+
+We also hypothesize that a voter is less likely to rank all the available candidates as the number of available alternatives increase. Below is the data collected to test this theory: 
+
+
 
 ## :dart: The Spatial Model of Elections
 
@@ -83,17 +86,19 @@ Here is a sample scatterplot & results of one simulated election:
 
 Below is the recorded data on the frequences of agreement of our tested counting methods: 
 
-Spatial positioning of Plurality vs. Condorcet winners when the methods disagree (more on this in the next section):
+Spatial positioning of Plurality vs. Condorcet winners, Baldwin vs. Instant Runoff winners when the methods disagree:
+
+We also hypothesize that the closer a race is, the more likely methods are to disagree. To confirm: 
 
 
 
 
 
 ## :8ball: Conclusions
-Some observations that immediately stick out:
+Our best conclusions from the data we collected:
 * Close races are a strong predictor of method disagreements
 * Condorcet winners occur very, very frequently, in both real election and simulation
-* Baldwin agrees most frequently with Condorcet (but not always in agreement - with incomplete ballots, they can disagree)
-* Borda and Baldwin agree much more frequently than their counterparts, Instant Runoff and Plurality
+* Our distribution of voters and candidates is very strongly deterministic of frequencies of method disagreemeents\
+* Plurality has extremely poor agreement with any other method - even Instant Runoff appears to pick the Condorcet winner ~90% of the time. Plurality picks differently from any other method nearly half the time, indicating our need to move away from simple plurality systems
 
-We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, could capitalize on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. We remain interested in attempting to "classify" the types (extreme, moderate, very similar to another candidate, etc.) of candidates who might win each respective method, therefore determining specific metrics which might help choose a better winner when methods do disagree. 
+We are most interested in the high frequency of Condorcet existence. This number being so high, both in practice and simulation, suggests that it could be a viable method. The main roadblock to Condorcet's method has always been it's potential lack of existence, but our data suggests it can be used in some way. Duncan Black's method, for example, could capitalize on this. We also have convincing evidence against using the traditional plurality count, seeing how frequently it disagrees with more advanced methods. We remain interested in attempting to "classify" the types (extreme, moderate, very similar to another candidate, etc.) of candidates who might win each respective method, therefore determining specific metrics which might help choose a better winner when methods do disagree. Our plot of Plurality vs. Condorcet winners was a rudimentary first attempt at this. That being said, our main goal is finding the necessary body of political science research that can lead us in the right direction to implementing an accurate political distribution of voters and candidates in an election. 
