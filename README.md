@@ -112,7 +112,7 @@ We also hypothesize that the closer a race is, the more likely methods are to di
 
 
 ## :8ball: Conclusions
-Our best conclusions from the data we collected:
+A few things that stand out:
 * Close races are a strong predictor of method disagreements
 * Condorcet winners occur very, very frequently, in both real election and simulation
 * The possibility of strategic voting is a real issue, something we (may) have evidence of. A closer look is required
