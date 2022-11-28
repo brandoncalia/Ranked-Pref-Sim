@@ -55,6 +55,9 @@ We observe a range of about 15-30% of all ballots containing only a single candi
 
 We also hypothesize that a voter is less likely to rank all the available candidates as the number of available alternatives increase. Below is the data collected to test this theory: 
 
+<img width="479" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/204261860-f0e82837-6979-4614-80ae-62ca58c65a4f.png">
+
+
 
 Our probability that a voter ranks all the available candidates will therefore become a decreasing linear function of candidate number plus a random normal variable. 
 
@@ -99,7 +102,7 @@ Spatial positioning of Plurality vs. Condorcet winners, Baldwin vs. Instant Runo
 
 We also hypothesize that the closer a race is, the more likely methods are to disagree. To confirm: 
 
-<img width="300" alt="bwir" src="https://user-images.githubusercontent.com/41372799/204259855-eb27be80-4774-4a32-bdf2-b0a553c2b349.png">
+<img width="450" alt="bwir" src="https://user-images.githubusercontent.com/41372799/204259855-eb27be80-4774-4a32-bdf2-b0a553c2b349.png">
 
 
 
