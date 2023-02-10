@@ -1,6 +1,10 @@
 # Ranked-Pref-Sim :bar_chart:
 A project in simulating & collecting data on mathematically realistic ranked preference elections based on ballot repositories from real elections 
 
+*Advised by Dr. Jeromy Sivek* 
+
+*Temple University Mathematics Department*
+
 ![preflib](https://user-images.githubusercontent.com/41372799/200403009-c54868f9-6d27-497c-aed9-b9b35e3f06c6.JPG) <img width="420" alt="spatial21 (1)" src="https://user-images.githubusercontent.com/41372799/200413514-f5016c47-505a-4970-b04c-529898ccb2cc.PNG"> 
 
 
